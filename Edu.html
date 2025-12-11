@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - SARNEESH's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sitka Heading Semibold', Arial, sans-serif;
+            background: linear-gradient(135deg, #16171f 0%, #ffffff 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(234, 0, 0, 0.3);
+        }
+
+        .navbar button {
+            color: rgba(255, 255, 255, 0.977);
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+            background-color: rgb(234, 0, 0);
+            padding: 8px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar button:hover {
+            background-color: #ffcc00;
+            color: #000;
+        }
+
+        body {
+            padding-top: 60px;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                         linear-gradient(135deg, #16171f 0%, #ffffff 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-section h1 {
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+            font-size: 50px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: white;
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+        }
+
+        .section-title span {
+            color: #ffcc00;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .edu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .edu-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border-left: 5px solid rgb(159, 7, 7);
+            position: relative;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(186, 3, 3, 0.3);
+        }
+
+        .edu-card-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #0a1c6c 0%, #6b00d6 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .edu-card h2 {
+            font-size: 24px;
+            color: rgb(186, 3, 3);
+            margin-bottom: 8px;
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+        }
+
+        .college {
+            font-size: 16px;
+            color: #667eea;
+            font-weight: 600;
+            margin: 8px 0;
+        }
+
+        .year {
+            font-weight: bold;
+            color: #764ba2;
+            margin: 8px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .year::before {
+            content: "📅";
+        }
+
+        .desc {
+            line-height: 1.6;
+            color: #333;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .grade {
+            font-weight: bold;
+            color: rgb(186, 3, 3);
+            padding: 8px 12px;
+            background: rgba(186, 3, 3, 0.1);
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .skills-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        .skills-section h3 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: rgb(186, 3, 3);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(186, 3, 3, 0.3);
+        }
+
+        .skill-tag:hover {
+            background: #ffcc00;
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 28px;
+            }
+
+            .edu-container {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .hero-section h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <h1>Education & Qualifications</h1>
+        <p>Academic Excellence & Professional Development</p>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">My <span>Academic Journey</span></h2>
+        <p class="section-subtitle">
+            Pursuing my Engineering degree at Kongu Engineering College with expertise in software development, full-stack web development, and design tools. Certified in HTML, CSS, C, C++, and Java with knowledge in IoT, PCB Fabrication, AutoCAD, and ROS.
+        </p>
+
+        <div class="edu-container">
+            <div class="edu-card">
+                <div class="edu-card-badge">CURRENT</div>
+                <h2>Bachelor of Engineering (B.E)</h2>
+                <p class="college">🎓 Kongu Engineering College</p>
+                <p class="year">2023 – 2027</p>
+                <p class="desc">Pursuing a degree focused on software development, programming, system design, and full-stack development with AutoCAD expertise.</p>
+                <p class="grade">CGPA: 7.56/10</p>
+            </div>
+
+            <div class="edu-card">
+                <div class="edu-card-badge">COMPLETED</div>
+                <h2>Higher Secondary Education</h2>
+                <p class="college">📚 Bharathi Matri Hr Sec School</p>
+                <p class="year">2021 – 2022</p>
+                <p class="desc">Completed coursework in Computer Science, Mathematics, and Physics with strong performance and technical foundation.</p>
+                <p class="grade">Percentage: 70%</p>
+            </div>
+
+            <div class="edu-card">
+                <div class="edu-card-badge">COMPLETED</div>
+                <h2>Secondary School Leaving Certificate (SSLC)</h2>
+                <p class="college">📖 Bharathi Matri Hr Sec School</p>
+                <p class="year">2019 – 2020</p>
+                <p class="desc">Strong academic foundation with early interest in technology and science subjects from secondary education.</p>
+                <p class="grade">Result: PASS</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Professional <span>Training & Certifications</span></h2>
+
+        <div class="edu-container">
+            <div class="edu-card">
+                <div class="edu-card-badge">CERTIFICATION</div>
+                <h2>Java & Full-Stack Development</h2>
+                <p class="college">💻 CSC Institution, Perundurai</p>
+                <p class="year">8 Months Training Program</p>
+                <p class="desc">Comprehensive training in Java programming, HTML5, CSS3, and JavaScript fundamentals for full-stack web development.</p>
+                <p class="grade">Knowledge Level: 90%</p>
+            </div>
+
+            <div class="edu-card">
+                <div class="edu-card-badge">CERTIFICATION</div>
+                <h2>AutoCAD (Core Design)</h2>
+                <p class="college">🎨 Kongu Engineering College</p>
+                <p class="year">3 Months Training Program</p>
+                <p class="desc">Professional training in computer-aided design with capability to design and model complex products and components.</p>
+                <p class="grade">Knowledge Level: 80%</p>
+            </div>
+
+            <div class="edu-card">
+                <div class="edu-card-badge">SPECIALIZATION</div>
+                <h2>IoT, PCB & Robotics</h2>
+                <p class="college">🤖 Kongu Engineering College</p>
+                <p class="year">Ongoing Since 2023</p>
+                <p class="desc">Hands-on experience with Internet of Things, PCB Fabrication, and Robot Operating System (ROS) projects and implementations.</p>
+                <p class="grade">Knowledge Level: 80%</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="skills-section">
+            <h3>Technical Skills & <span style="color: #ffcc00;">Expertise</span></h3>
+            <div class="skills-grid">
+                <div class="skill-tag">Java</div>
+                <div class="skill-tag">C++</div>
+                <div class="skill-tag">C</div>
+                <div class="skill-tag">HTML5</div>
+                <div class="skill-tag">CSS3</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">Full-Stack Dev</div>
+                <div class="skill-tag">AutoCAD</div>
+                <div class="skill-tag">IoT</div>
+                <div class="skill-tag">ROS</div>
+                <div class="skill-tag">PCB Design</div>
+                <div class="skill-tag">Software Design</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

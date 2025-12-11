@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Me</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: linear-gradient(135deg, #667eea00 0%, #c0b7c800 100%);
+                background-attachment: fixed;
+                font-family: 'Sitka Heading Semibold', Arial, sans-serif;
+                min-height: 100vh;
+            }
+
+            .hero-section {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                            url('homeps3.avif') center/cover;
+                background-attachment: fixed;
+                padding: 60px 20px;
+                text-align: center;
+                color: white;
+            }
+
+            h1 {
+                font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+                font-size: 50px;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            }
+
+            .profile-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+                padding: 40px;
+                max-width: 1200px;
+                margin: 40px auto;
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            .photo1 {
+                width: 250px;
+                height: 250px;
+                border-radius: 15px;
+                border: 5px solid rgb(186, 3, 3);
+                object-fit: cover;
+                box-shadow: 0 8px 20px rgba(186, 3, 3, 0.3);
+                flex-shrink: 0;
+            }
+
+            .intro-text {
+                flex: 1;
+                text-align: left;
+            }
+
+            .soft {
+                font-family: 'Sitka Heading Semibold', Arial, sans-serif;
+                color: rgb(186, 3, 3);
+                font-size: 48px;
+                margin-bottom: 20px;
+                line-height: 1.2;
+            }
+
+            .text {
+                font-family: 'Sitka Heading Semibold', Arial, sans-serif;
+                color: rgb(46, 56, 59);
+                font-size: 18px;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .languages-section {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+                padding: 60px 40px;
+                margin-top: 40px;
+            }
+
+            .languages-title {
+                font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+                color: rgb(186, 3, 3);
+                font-size: 36px;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .languages-grid {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .photo {
+                width: 200px;
+                height: 200px;
+                border-radius: 10px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                background: white;
+                padding: 10px;
+            }
+
+            .photo:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 12px 30px rgba(186, 3, 3, 0.3);
+            }
+
+            @media (max-width: 768px) {
+                .profile-container {
+                    flex-direction: column;
+                    padding: 20px;
+                }
+
+                .soft {
+                    font-size: 36px;
+                }
+
+                h1 {
+                    font-size: 36px;
+                }
+
+                .languages-grid {
+                    gap: 15px;
+                }
+
+                .photo {
+                    width: 150px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hero-section">
+            <h1>About Me</h1>
+            <p style="font-size: 18px; opacity: 0.9;">Passionate Software Developer & Designer</p>
+        </div>
+
+        <div class="profile-container">
+            <img src="profile photo.webp" alt="Profile picture" class="photo1">
+            <div class="intro-text">
+                <h2 class="soft">I'm a Software<br>Developer &<br>Software Designer</h2>
+                <p class="text">
+                    I am a creative and detail-driven Software Designer with experience in building user-friendly applications and designing intuitive digital interfaces. I combine design thinking with strong development skills to create seamless user experiences. My work focuses on performance optimization and problem-solving through code.
+                </p>
+            </div>
+        </div>
+
+        <div class="languages-section">
+            <h3 class="languages-title">Languages & Technologies</h3>
+            <div class="languages-grid">
+                <img src="html.png" alt="HTML" class="photo">
+                <img src="css1.png" alt="CSS" class="photo">
+                <img src="javascrip.png" alt="JavaScript" class="photo">
+                <img src="java.png" alt="Java" class="photo">
+            </div>
+        </div>
+    </body>
+</html>

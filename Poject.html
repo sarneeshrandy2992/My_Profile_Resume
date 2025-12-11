@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - SARNEESH's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sitka Heading Semibold', Arial, sans-serif;
+            background: linear-gradient(135deg, #16171f 0%, #ffffff 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(234, 0, 0, 0.3);
+            flex-wrap: wrap;
+        }
+
+        .navbar button {
+            color: rgba(255, 255, 255, 0.977);
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+            background-color: rgb(234, 0, 0);
+            padding: 8px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar button:hover {
+            background-color: #ffcc00;
+            color: #000;
+        }
+
+        body {
+            padding-top: 60px;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        linear-gradient(135deg, #363c57 0%, #ffffff 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-section h1 {
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+            font-size: 50px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #333;
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+        }
+
+        .section-title span {
+            color: rgb(186, 3, 3);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #fffcfc;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .projects-category {
+            margin-bottom: 50px;
+        }
+
+        .category-title {
+            font-size: 24px;
+            color: rgb(255, 255, 0);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid rgb(255, 204, 0);
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            border-left: 5px solid rgb(186, 3, 3);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(186, 3, 3, 0.25);
+        }
+
+        .project-number {
+            display: inline-block;
+            background: linear-gradient(135deg, rgb(186, 3, 3), #ffcc00);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+        }
+
+        .project-title {
+            font-size: 22px;
+            color: rgb(186, 3, 3);
+            margin-bottom: 12px;
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+        }
+
+        .project-desc {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .skill-badge {
+            background: rgba(186, 3, 3, 0.1);
+            color: rgb(186, 3, 3);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            border: 1px solid rgb(186, 3, 3);
+        }
+
+        .project-status {
+            display: inline-block;
+            background: linear-gradient(135deg, #0a1c6c 0%, #2600ff 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .project-status.in-progress {
+            background: #ff9800;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.15), rgba(186, 3, 3, 0.1));
+            border: 2px solid rgb(186, 3, 3);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .info-box h3 {
+            font-size: 22px;
+            color: rgb(186, 3, 3);
+            margin-bottom: 12px;
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+        }
+
+        .info-box p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .skill-link {
+            display: inline-block;
+            background: rgb(186, 3, 3);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+        }
+
+        .skill-link:hover {
+            background: #ffcc00;
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        .project-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid rgb(186, 3, 3);
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: rgb(186, 3, 3);
+            font-family: 'Artifakt Element Heavy', Arial, sans-serif;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 28px;
+            }
+
+            .category-title {
+                font-size: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                gap: 10px;
+            }
+
+            .hero-section h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <h1>My Projects</h1>
+        <p>Showcase of Technical Expertise & Practical Implementation</p>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <p class="section-subtitle">
+            A collection of projects developed using various programming languages and frameworks, showcasing expertise in full-stack development, IoT systems, and design engineering.
+        </p>
+
+        <div class="stats-row">
+            <div class="stat-box">
+                <div class="stat-number">9+</div>
+                <div class="stat-label">Total Projects</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Project Categories</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">6+</div>
+                <div class="stat-label">Technologies Used</div>
+            </div>
+        </div>
+
+        <!-- Full Stack Web Development Projects -->
+        <div class="projects-category">
+            <h3 class="category-title">Full Stack Web Development</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-status">Completed</div>
+                    <div class="project-icon">🧮</div>
+                    <div class="project-title">Advanced Calculator Application</div>
+                    <p class="project-desc">A feature-rich calculator with support for multiple calculation types, scientific operations, and a user-friendly interface.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status">Completed</div>
+                    <div class="project-icon">☕</div>
+                    <div class="project-title">Tea Shop Bill Management System</div>
+                    <p class="project-desc">Comprehensive billing and inventory management system for tea shop operations with transaction tracking and reporting features.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status">Completed</div>
+                    <div class="project-icon">📑</div>
+                    <div class="project-title">My Portfolio Resume Website</div>
+                    <p class="project-desc">Professional portfolio website showcasing skills, projects, and experience with responsive design and modern UI/UX principles.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status">Completed</div>
+                    <div class="project-icon">✅</div>
+                    <div class="project-title">Simple To-Do List Application</div>
+                    <p class="project-desc">Task management application with add, edit, delete, and mark-complete functionality with local storage persistence.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Java Projects -->
+        <div class="projects-category">
+            <h3 class="category-title">☕ Java Development Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-status">Completed</div>
+                    <div class="project-icon">👨‍🎓</div>
+                    <div class="project-title">Student Management System</div>
+                    <p class="project-desc">Complete student database management system with add, update, delete, and search functionalities. Features secure data handling and reporting.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">OOP</span>
+                        <span class="skill-badge">Database</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status">Completed</div>
+                    <div class="project-icon">🛒</div>
+                    <div class="project-title">Tea Shop Bill Management System</div>
+                    <p class="project-desc">Enterprise-level billing system for tea shop with inventory tracking, sales analytics, and automated reporting capabilities.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">Swing</span>
+                        <span class="skill-badge">Database</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status">Completed</div>
+                    <div class="project-icon">🎨</div>
+                    <div class="project-title">GUI Interface Application</div>
+                    <p class="project-desc">Interactive graphical user interface application built with Java Swing demonstrating event handling and component management.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">Swing</span>
+                        <span class="skill-badge">AWT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IoT & Core Projects -->
+        <div class="projects-category">
+            <h3 class="category-title">🤖 IoT & Embedded Systems Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-status in-progress">In Progress</div>
+                    <div class="project-icon">🚤</div>
+                    <div class="project-title">IoT-Based Sea Mine Detection System Bot</div>
+                    <p class="project-desc">Autonomous underwater vehicle with IoT sensors for detecting sea mines. Features real-time data transmission and threat identification.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">IoT</span>
+                        <span class="skill-badge">Embedded Systems</span>
+                        <span class="skill-badge">Robotics</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status in-progress">In Progress</div>
+                    <div class="project-icon">💧</div>
+                    <div class="project-title">Automatic Water Pollution Detection Bot</div>
+                    <p class="project-desc">Smart robotic system for monitoring and detecting water pollution in rivers. Equipped with sensors for real-time pollution level analysis.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">IoT</span>
+                        <span class="skill-badge">ROS</span>
+                        <span class="skill-badge">Sensors</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status">Completed</div>
+                    <div class="project-icon">⚠️</div>
+                    <div class="project-title">Industrial Gas Leakage Detection System</div>
+                    <p class="project-desc">Safety-critical system for detecting and alerting hazardous gas leaks in industrial facilities with automatic emergency protocols.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">IoT</span>
+                        <span class="skill-badge">C/C++</span>
+                        <span class="skill-badge">Sensors</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design & CAD Projects -->
+        <div class="projects-category">
+            <h3 class="category-title">🎯 Design Engineering Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-status">Completed</div>
+                    <div class="project-icon">📋</div>
+                    <div class="project-title">PCB Circuit Design</div>
+                    <p class="project-desc">Professional printed circuit board designs for various electronic applications including schematic design and layout optimization.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">PCB Design</span>
+                        <span class="skill-badge">Schematic</span>
+                        <span class="skill-badge">Electronics</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status">Completed</div>
+                    <div class="project-icon">🏗️</div>
+                    <div class="project-title">AutoCAD Product Design</div>
+                    <p class="project-desc">Comprehensive 3D and 2D designs for mechanical products and components using professional CAD tools and engineering standards.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">AutoCAD</span>
+                        <span class="skill-badge">3D Design</span>
+                        <span class="skill-badge">CAD</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status">Completed</div>
+                    <div class="project-icon">🤖</div>
+                    <div class="project-title">Robot Operating System (ROS)</div>
+                    <p class="project-desc">Robotics projects using ROS framework including robot control, navigation, and sensor integration for autonomous systems.</p>
+                    <div class="project-skills">
+                        <span class="skill-badge">ROS</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Robotics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box">
+            <h3>Want to see the skills used in these projects?</h3>
+            <p>Explore detailed information about all the technologies, programming languages, and tools I've used across these projects.</p>
+            <a href="skill.html" class="skill-link">💻 View My Skills & Technologies</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
