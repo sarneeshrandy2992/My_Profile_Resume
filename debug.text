@@ -1,0 +1,25 @@
+Open git Webpage;
+
+STEP 1 — Check current branch
+    git init
+    git branch
+
+STEP 2 — Add your files
+    git add .
+
+STEP 3 — Commit the files
+    git commit -m "first commit"
+
+STEP 4 — Rename branch to main
+    git branch -M main
+
+STEP 5 — Remove the old origin (because it's already set)
+    git remote remove origin
+
+STEP 6 — Add GitHub link again
+    git remote add origin https://github.com/sarneeshrandy2992/My_Profile_Resume.git
+
+STEP 7 — Push your code
+    git push -u origin main
+
+Completed---
