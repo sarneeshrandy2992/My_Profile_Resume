@@ -1,0 +1,96 @@
+<html>
+    <title>Temp</title>
+    <head>
+        <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+    }
+
+    body {
+        background-color: #f4f4f4;
+    }
+
+    /* Main container */
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    /* Make images responsive */
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /* Responsive text */
+    h1, h2, h3, p {
+        word-wrap: break-word;
+    }
+
+    /* Card layout */
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* --- Desktop Layout --- */
+    @media (min-width: 768px) {
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+        .col {
+            flex: 1;
+        }
+    }
+
+    /* --- Phone / Small Screen --- */
+    @media (max-width: 767px) {
+        .card {
+            padding: 15px;
+        }
+        h1 {
+            font-size: 22px;
+        }
+        p {
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+        }
+    }
+</style>
+
+    </head>
+    <body>
+        <div class="container">
+
+    <div class="card row">
+        <div class="col">
+            <h1>About Me</h1>
+            <p>Hello, I am a Software Developer learning full-stack web development.</p>
+        </div>
+
+        <div class="col">
+            <img src="profile.jpg" alt="Profile Photo">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>My Skills</h2>
+        <p>Java | HTML | CSS | JavaScript</p>
+    </div>
+
+</div>
+
+    </body>
+</html>
